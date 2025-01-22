@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  loadbuster:
+    build: .
+    container_name: loadbuster
+    entrypoint: ["/usr/local/bin/loadbuster"]
+    command: ["start", "--url", "https://postman-echo.com/post", "--method", "POST",
+      "--body", "{\"test\":\"hello\"}", "--concurrency", "2", "--duration", "5s"]
